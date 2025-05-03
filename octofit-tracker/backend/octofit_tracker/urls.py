@@ -30,12 +30,13 @@ router.register(r'leaderboard', LeaderboardViewSet, basename='leaderboard')
 
 @api_view(['GET'])
 def api_root(request):
+    codespace_url = "https://symmetrical-space-parakeet-65vw5rpwpwc5jj5-8000.app.github.dev"
     return Response({
-        'users': '/api/users/',
-        'teams': '/api/teams/',
-        'activities': '/api/activities/',
-        'workouts': '/api/workouts/',
-        'leaderboard': '/api/leaderboard/',
+        'users': f'{codespace_url}/api/users/',
+        'teams': f'{codespace_url}/api/teams/',
+        'activities': f'{codespace_url}/api/activities/',
+        'workouts': f'{codespace_url}/api/workouts/',
+        'leaderboard': f'{codespace_url}/api/leaderboard/',
     })
 
 urlpatterns = [
